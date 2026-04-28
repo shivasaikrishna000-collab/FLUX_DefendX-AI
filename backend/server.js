@@ -40,9 +40,14 @@ const THREAT_RULES = [
 ];
 
 app.post('/analyze', (req, res) => {
-    const { text } = req.body;
+    const raw = req.body && req.body.text;
+    const text = typeof raw === 'string' ? raw.trim() : '';
+
     if (!text) {
-        return res.status(400).json({ error: 'Text input is required' });
+        return res.status(400).json({
+            error: true,
+            message: 'Text input is required and cannot be empty.'
+        });
     }
 
     const lowerText = text.toLowerCase();

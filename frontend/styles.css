@@ -35,3 +35,11 @@ textarea::-webkit-scrollbar-thumb:hover {
     padding: 0 2px;
     border-radius: 2px;
 }
+
+.highlight-warning {
+    background-color: rgba(245, 158, 11, 0.2);
+    border-bottom: 1px dashed #f59e0b;
+    color: #fcd34d;
+    padding: 0 2px;
+    border-radius: 2px;
+}
